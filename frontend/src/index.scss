@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 body {
-  min-height: 100dvh;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -18,5 +17,8 @@ p {
 }
 
 #root {
+  display: flex;
+  flex-direction: column;
   isolation: isolate;
+  min-height: 100dvh;
 }
