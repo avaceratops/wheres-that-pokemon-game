@@ -2,8 +2,8 @@ const express = require('express');
 
 const router = express.Router();
 
-router.get('/', (req, res) => {
-  res.json({ msg: "Where's That Pokémon" })
-});
+const coordController = require('../controllers/coordController');
+
+router.post('/coord/:name', coordController.check_coord);
 
 module.exports = router;
