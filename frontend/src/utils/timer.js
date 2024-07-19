@@ -1,15 +1,14 @@
-import { Duration } from 'luxon';
+import { format } from 'date-fns';
 
 const formatTime = (playTime) => {
-  const duration = Duration.fromMillis(playTime);
-  const minutes = Math.floor(duration.as('minutes'));
-  const seconds = (playTime / 1000) % 60;
+  const minutes = Math.floor(playTime / 1000 / 60);
+  const seconds = format(playTime, 's.SS');
 
   let result = '';
   if (minutes > 0) {
     result += `${minutes} ${minutes === 1 ? 'minute' : 'minutes'}, `;
   }
-  result += `${seconds.toFixed(2)} ${seconds === 1 ? 'second' : 'seconds'}`;
+  result += `${seconds} ${seconds === 1 ? 'second' : 'seconds'}`;
 
   return result;
 };

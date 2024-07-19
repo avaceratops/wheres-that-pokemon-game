@@ -1,4 +1,4 @@
-import { Duration } from 'luxon';
+import { format } from 'date-fns';
 import PokemonSprite from './PokemonSprite';
 
 export default function GameHeader({ solved, playTime }) {
@@ -18,7 +18,7 @@ export default function GameHeader({ solved, playTime }) {
       </section>
 
       <section className="text-right font-mono lg:w-60">
-        <p>{Duration.fromMillis(playTime).toFormat('mm:ss:SSS')}</p>
+        <p>{format(playTime, 'mm:ss:SS')}</p>
       </section>
     </header>
   );
