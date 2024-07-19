@@ -4,8 +4,8 @@ import PokemonSprite from './PokemonSprite';
 export default function GameHeader({ solved, playTime }) {
   return (
     <header
-      className="xs:flex-row xs:justify-between fixed top-0 z-20 flex w-full flex-col items-center
-        gap-2 border-b border-gray-200 bg-white/90 px-4 py-2 backdrop-blur sm:gap-20"
+      className="fixed top-0 z-20 flex w-full flex-col items-center gap-2 border-b border-gray-200
+        bg-white/90 px-4 py-2 backdrop-blur xs:flex-row xs:justify-between sm:gap-20"
     >
       <h1 className="hidden text-2xl font-bold leading-none tracking-tight md:block">
         where&apos;s that pokémon?
@@ -18,7 +18,7 @@ export default function GameHeader({ solved, playTime }) {
       </section>
 
       <section className="text-right font-mono lg:w-60">
-        <p>{Duration.fromObject({ second: playTime }).toFormat('hh:mm:ss')}</p>
+        <p>{Duration.fromMillis(playTime).toFormat('mm:ss:SSS')}</p>
       </section>
     </header>
   );
