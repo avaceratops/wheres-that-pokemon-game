@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'http://localhost:5174/api',
+  baseURL: 'https://wheres-that-pokemon-game-production.up.railway.app/api',
 });
 
 export default api;
